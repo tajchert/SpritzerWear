@@ -11,7 +11,6 @@ import pl.tajchert.spritzerwearcommon.Story;
 
 
 public class AdapterComment extends RecyclerView.Adapter<HolderStory> {
-    private static final String TAG = "AdapterComment";
     private List<Story> storyList;
 
     public AdapterComment(List<Story> commentList) {

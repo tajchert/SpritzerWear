@@ -70,4 +70,10 @@ public class FragmentSpritzer extends Fragment {
             }
         });
     }
+
+    public void setStoryContent(String content){
+        if(spritzerTV != null){
+            spritzerTV.setSpritzText(content);
+        }
+    }
 }

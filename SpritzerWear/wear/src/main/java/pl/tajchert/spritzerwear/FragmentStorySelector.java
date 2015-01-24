@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.wearable.view.WearableListView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,9 +35,9 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_story_selector, container, false);
         listView = (WearableListView) view.findViewById(R.id.story_listview);
-        ArrayList<String> stories = new ArrayList<>();
-        stories.add("Story 1");
-        stories.add("Story 2");
+        stories = new ArrayList<>();
+        stories.add(new Story("Story 1", ""));
+        stories.add(new Story("Story 2", ""));
         adapter = new Adapter(getActivity(), stories);
         listView.setAdapter(adapter);
         listView.setClickListener(this);
@@ -51,7 +52,9 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
 
     @Override
     public void onClick(WearableListView.ViewHolder v) {
-        //set Spritzer content
+        if(fragmentSpritzer != null){
+            fragmentSpritzer.setStoryContent(stories.get(v.getPosition()).content);
+        }
     }
 
     @Override
@@ -68,9 +71,9 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
     private static final class Adapter extends WearableListView.Adapter {
         private final Context mContext;
         private final LayoutInflater mInflater;
-        public ArrayList<String> storyList = new ArrayList<>();
+        public ArrayList<Story> storyList = new ArrayList<>();
 
-        private Adapter(Context context, ArrayList<String> stories) {
+        private Adapter(Context context, ArrayList<Story> stories) {
             mContext = context;
             mInflater = LayoutInflater.from(context);
             storyList = stories;
@@ -84,7 +87,8 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         @Override
         public void onBindViewHolder(WearableListView.ViewHolder holder, int position) {
             TextView view = (TextView) holder.itemView.findViewById(R.id.name);
-            view.setText(storyList.get(position));
+            view.setText(storyList.get(position).title);
+            Log.d("FragmentStorySelector", "title: " +storyList.get(position).title);
             holder.itemView.setTag(position);
         }
 
@@ -97,6 +101,8 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
     private void readStories(){
         String content = getActivity().getBaseContext().getSharedPreferences(Tools.PREFS, Context.MODE_PRIVATE).getString(Tools.WEAR_KEY, "");
         stories = storyFromJson(content);
+        adapter = new Adapter(getActivity(), stories);
+        listView.setAdapter(adapter);
     }
 
     private ArrayList<Story> storyFromJson(String in){

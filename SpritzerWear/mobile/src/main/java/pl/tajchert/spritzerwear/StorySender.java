@@ -71,9 +71,12 @@ public class StorySender extends AsyncTask<Story, Void, String> {
         }
         PutDataMapRequest dataMap = PutDataMapRequest.create(Tools.WEAR_PATH);
         DataMap dataMapToPut = dataMap.getDataMap();
-        String content = new JSONArray(storiesToSend).toString();
+        JSONArray contentList = new JSONArray();
+        for(Story story : storiesToSend){
+            contentList.put(story.toJSONObject());
+        }
 
-        dataMapToPut.putString(Tools.WEAR_KEY, content);
+        dataMapToPut.putString(Tools.WEAR_KEY, contentList.toString());
         PutDataRequest request = dataMap.asPutDataRequest();
         PendingResult<DataApi.DataItemResult> pendingResult = Wearable.DataApi.putDataItem(mGoogleAppiClient, request);
         pendingResult.setResultCallback(new ResultCallback<DataApi.DataItemResult>() {
