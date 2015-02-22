@@ -53,7 +53,7 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
     @Override
     public void onClick(WearableListView.ViewHolder v) {
         if(fragmentSpritzer != null){
-            fragmentSpritzer.setStoryContent(stories.get(v.getPosition()).content);
+            fragmentSpritzer.setStoryContent(stories.get(v.getPosition()).getContent());
         }
     }
 
@@ -87,8 +87,8 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         @Override
         public void onBindViewHolder(WearableListView.ViewHolder holder, int position) {
             TextView view = (TextView) holder.itemView.findViewById(R.id.name);
-            view.setText(storyList.get(position).title);
-            Log.d("FragmentStorySelector", "title: " +storyList.get(position).title);
+            view.setText(storyList.get(position).getTitle());
+            Log.d("FragmentStorySelector", "title: " +storyList.get(position).getTitle());
             holder.itemView.setTag(position);
         }
 
@@ -112,8 +112,8 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
             jsonArray = new JSONArray(in);
             for (int i = 0; i < jsonArray.length(); i++) {
                 Story story = new Story();
-                story.title = ((JSONObject) jsonArray.get(i)).optString("title");
-                story.content = ((JSONObject) jsonArray.get(i)).optString("content");
+                story.setTitle(((JSONObject) jsonArray.get(i)).optString("title"));
+                story.setContent(((JSONObject) jsonArray.get(i)).optString("content"));
                 stories.add(story);
             }
         } catch (JSONException e) {

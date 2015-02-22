@@ -45,7 +45,7 @@ public class GridViewPagerOnlyHorizontal extends GridViewPager {
                 mLastY = curY;
 
                 if (mDiffX > mDiffY) {
-                     // do not react for vertical touches
+                     // horizontal touch (do nothing
                 } else {
                     return false;
                 }

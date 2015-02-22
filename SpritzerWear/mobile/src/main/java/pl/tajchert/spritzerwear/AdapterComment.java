@@ -29,7 +29,7 @@ public class AdapterComment extends RecyclerView.Adapter<HolderStory> {
     @Override
     public void onBindViewHolder(HolderStory contactViewHolder, int i) {
         Story ci = storyList.get(i);
-        contactViewHolder.storyTitle.setText(ci.title);
+        contactViewHolder.storyTitle.setText(ci.getTitle());
     }
 
     @Override
