@@ -1,6 +1,5 @@
 package pl.tajchert.spritzerwear;
 
-
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -11,21 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
+import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 import pl.tajchert.spritzerwearcommon.Story;
-import pl.tajchert.spritzerwearcommon.Tools;
-
+import pl.tajchert.spritzerwearcommon.StoryRealm;
 
 public class FragmentStorySelector extends Fragment implements WearableListView.ClickListener {
     private WearableListView.Adapter adapter;
     private WearableListView listView;
     public FragmentSpritzer fragmentSpritzer;
     private ArrayList<Story> stories;
+    private Realm realm;
 
     public FragmentStorySelector() {
     }
@@ -36,18 +34,27 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         View view = inflater.inflate(R.layout.fragment_story_selector, container, false);
         listView = (WearableListView) view.findViewById(R.id.story_listview);
         stories = new ArrayList<>();
-        stories.add(new Story("Story 1", ""));
-        stories.add(new Story("Story 2", ""));
         adapter = new Adapter(getActivity(), stories);
         listView.setAdapter(adapter);
         listView.setClickListener(this);
+        realm = Realm.getInstance(getActivity());
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        readStories();
+        readStoriesRealm();
+    }
+    private void readStoriesRealm(){
+        RealmQuery<StoryRealm> query = realm.where(StoryRealm.class);
+        RealmResults<StoryRealm> resultAllStories = query.findAll();
+        stories = new ArrayList<>();
+        for(StoryRealm storyRealm : resultAllStories){
+            stories.add(new Story(storyRealm));
+        }
+        adapter = new Adapter(getActivity(), stories);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -59,13 +66,6 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
 
     @Override
     public void onTopEmptyRegionClick() {
-
-    }
-
-    public void setStory(int num){
-        if(listView != null){
-            listView.smoothScrollToPosition(num);
-        }
     }
 
     private static final class Adapter extends WearableListView.Adapter {
@@ -96,29 +96,5 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         public int getItemCount() {
             return storyList.size();
         }
-    }
-
-    private void readStories(){
-        String content = getActivity().getBaseContext().getSharedPreferences(Tools.PREFS, Context.MODE_PRIVATE).getString(Tools.WEAR_KEY, "");
-        stories = storyFromJson(content);
-        adapter = new Adapter(getActivity(), stories);
-        listView.setAdapter(adapter);
-    }
-
-    private ArrayList<Story> storyFromJson(String in){
-        ArrayList<Story> stories = new ArrayList<>();
-        JSONArray jsonArray;
-        try {
-            jsonArray = new JSONArray(in);
-            for (int i = 0; i < jsonArray.length(); i++) {
-                Story story = new Story();
-                story.setTitle(((JSONObject) jsonArray.get(i)).optString("title"));
-                story.setContent(((JSONObject) jsonArray.get(i)).optString("content"));
-                stories.add(story);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return stories;
     }
 }
