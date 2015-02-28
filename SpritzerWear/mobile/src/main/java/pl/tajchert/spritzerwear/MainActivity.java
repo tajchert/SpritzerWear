@@ -11,10 +11,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
-import com.google.android.gms.wearable.Asset;
 import com.melnykov.fab.FloatingActionButton;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
@@ -24,7 +22,6 @@ import io.realm.RealmResults;
 import pl.tajchert.spritzerwear.events.DeletedStory;
 import pl.tajchert.spritzerwearcommon.Story;
 import pl.tajchert.spritzerwearcommon.StoryRealm;
-import pl.tajchert.spritzerwearcommon.Tools;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -135,14 +132,7 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         //new StorySender(arrayListStories, MainActivity.this).execute();
         EventBus.getDefault().unregister(this);
-        syncRealm();
+        FileSender.syncRealm(MainActivity.this);
 
-    }
-
-    private void syncRealm(){
-        File writableFolder = MainActivity.this.getFilesDir();
-        File realmFile = new File(writableFolder, Realm.DEFAULT_REALM_NAME);
-        Asset realAsset = Tools.assetFromFile(realmFile);
-        new FileSender(realAsset, MainActivity.this).execute();
     }
 }

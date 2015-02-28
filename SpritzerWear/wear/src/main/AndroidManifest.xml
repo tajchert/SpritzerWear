@@ -18,11 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".DataLayerListenerService" >
+
+        <service android:name=".ListenerService" >
             <intent-filter>
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".SpritzerActivity"
+            android:label="@string/title_activity_spritzer" >
+        </activity>
     </application>
 
 </manifest>

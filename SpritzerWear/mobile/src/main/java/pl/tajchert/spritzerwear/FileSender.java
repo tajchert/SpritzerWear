@@ -2,10 +2,8 @@ package pl.tajchert.spritzerwear;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
 
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -15,10 +13,12 @@ import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
-import pl.tajchert.spritzerwearcommon.Story;
+import java.io.File;
+
+import io.realm.Realm;
 import pl.tajchert.spritzerwearcommon.Tools;
 
-public class FileSender extends AsyncTask<Story, Void, String> {
+public class FileSender extends AsyncTask<Void, Void, Void> {
     private Asset asset;
     private Context context;
     private GoogleApiClient mGoogleAppiClient;
@@ -31,33 +31,18 @@ public class FileSender extends AsyncTask<Story, Void, String> {
     }
 
     @Override
-    protected String doInBackground(Story... params) {
+    protected Void doInBackground(Void... params) {
         sendData(asset);
-        return "";
+        return null;
     }
 
     @Override
     protected void onPreExecute() {
         mGoogleAppiClient = new GoogleApiClient.Builder(context)
-                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-                    @Override
-                    public void onConnected(Bundle connectionHint) {
-                    }
-                    @Override
-                    public void onConnectionSuspended(int cause) {
-                    }
-                }).addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(ConnectionResult result) {
-                    }
-                })
                 .addApi(Wearable.API)
                 .build();
         mGoogleAppiClient.connect();
     }
-
-    @Override
-    protected void onProgressUpdate(Void... values) {}
 
     private void sendData(Asset asset) {
         if(asset == null){
@@ -74,5 +59,12 @@ public class FileSender extends AsyncTask<Story, Void, String> {
                 Log.d(TAG, "onResult result:" + dataItemResult.getStatus());
             }
         });
+    }
+
+    public static void syncRealm(Context context){
+        File writableFolder = context.getFilesDir();
+        File realmFile = new File(writableFolder, Realm.DEFAULT_REALM_NAME);
+        Asset realAsset = Tools.assetFromFile(realmFile);
+        new FileSender(realAsset, context).execute();
     }
 }

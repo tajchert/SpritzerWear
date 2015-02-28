@@ -18,8 +18,8 @@ import io.realm.Realm;
 import pl.tajchert.spritzerwearcommon.Tools;
 
 
-public class DataLayerListenerService extends WearableListenerService {
-    private static final String TAG = DataLayerListenerService.class.getSimpleName();
+public class ListenerService extends WearableListenerService {
+    private static final String TAG = ListenerService.class.getSimpleName();
 
     @Override
     public void onCreate() {
@@ -46,7 +46,7 @@ public class DataLayerListenerService extends WearableListenerService {
     }
 
     private void toFile(byte [] byteArray){
-        File writableFolder = DataLayerListenerService.this.getFilesDir();
+        File writableFolder = ListenerService.this.getFilesDir();
         File realmFile = new File(writableFolder, Realm.DEFAULT_REALM_NAME);
         if (realmFile.exists()) {
             realmFile.delete();
