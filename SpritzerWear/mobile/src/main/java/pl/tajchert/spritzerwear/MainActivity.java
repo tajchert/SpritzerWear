@@ -6,26 +6,31 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
+import com.google.android.gms.wearable.Node;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 
 import de.greenrobot.event.EventBus;
 import io.realm.Realm;
+import io.realm.RealmChangeListener;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
+import pl.tajchert.detectwear.DetectWear;
 import pl.tajchert.spritzerwear.events.DeletedStory;
 import pl.tajchert.spritzerwearcommon.Story;
 import pl.tajchert.spritzerwearcommon.StoryRealm;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements RealmChangeListener, DetectWear.NodesListener{
 
+    private static final String TAG = "MainActivity";
     private RecyclerView commentsRecList;
     private RecyclerView.Adapter adapter;
     private FloatingActionButton fab;
@@ -36,8 +41,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DetectWear.init(this);
+        DetectWear.setNodesListener(this);
 
-        realm = Realm.getInstance(this);
+
 
         commentsRecList = (RecyclerView) findViewById(R.id.storyList);
         fab = (FloatingActionButton) findViewById(R.id.normal_plus);
@@ -71,7 +78,19 @@ public class MainActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
         EventBus.getDefault().register(this);
+        realm = Realm.getInstance(this);
+        realm.addChangeListener(this);
+        Log.d(TAG, "onCreate isConnected: " + DetectWear.isConnected());
         readStories();
+    }
+
+    @Override
+    protected void onStop() {
+        if(realm != null) {
+            realm.removeAllChangeListeners();
+            realm.close();
+        }
+        super.onStop();
     }
 
     private void showAddDialog(){
@@ -132,7 +151,25 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
         //new StorySender(arrayListStories, MainActivity.this).execute();
         EventBus.getDefault().unregister(this);
-        FileSender.syncRealm(MainActivity.this);
+    }
 
+    @Override
+    public void onChange() {
+        FileSender.syncRealm(MainActivity.this);
+    }
+
+    @Override
+    public void nodesChanged(ArrayList<Node> nodes) {
+        Log.d(TAG, "nodesChanged nodes: " + nodes);
+    }
+
+    @Override
+    public void onNoConnectedNode() {
+        Log.d(TAG, "onNoConnectedNode ");
+    }
+
+    @Override
+    public void onNewConnectedNode(Node node) {
+        Log.d(TAG, "onNewConnectedNode node: " + node);
     }
 }

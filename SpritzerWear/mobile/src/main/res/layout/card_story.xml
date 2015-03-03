@@ -19,7 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-            android:layout_margin="10dp"/>
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="5dp"/>
 
         <TextView
             android:id="@+id/storyContent"
@@ -29,13 +31,14 @@
             android:layout_toLeftOf="@+id/storyDelete"
             android:layout_alignParentLeft="true"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:textStyle="italic"
             android:layout_marginLeft="10dp"
             android:paddingBottom="10dp"
             android:layout_marginRight="10dp"/>
 
         <ImageButton
             android:id="@+id/storyDelete"
-            android:layout_width="33dp"
+            android:layout_width="34dp"
             android:layout_height="36dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
