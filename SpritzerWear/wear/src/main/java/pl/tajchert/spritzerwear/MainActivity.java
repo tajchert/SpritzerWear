@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DetectShape.initShapeWear(this);
         setContentView(R.layout.activity_gridviewpager);
 
         fragments = new ArrayList<>();
