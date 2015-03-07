@@ -4,11 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +34,7 @@ import pl.tajchert.spritzerwearcommon.Story;
 import pl.tajchert.spritzerwearcommon.StoryRealm;
 
 
-public class MainActivity extends ActionBarActivity implements RealmChangeListener, DetectWear.NodesListener{
+public class MainActivity extends ActionBarActivity implements RealmChangeListener, DetectWear.NodesListener {
 
     private static final String TAG = "MainActivity";
     private RecyclerView commentsRecList;
@@ -42,13 +42,15 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
     private FloatingActionButton fab;
     private ArrayList<Story> arrayListStories;
     private Realm realm;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DetectWear.init(this);
         DetectWear.setNodesListener(this);
+
+        sharedPreferences = this.getSharedPreferences("pl.tajchert.spritzerwear", Context.MODE_PRIVATE);
 
         commentsRecList = (RecyclerView) findViewById(R.id.storyList);
         fab = (FloatingActionButton) findViewById(R.id.normal_plus);
@@ -67,35 +69,41 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
         adapter = new AdapterComment(arrayListStories);
         commentsRecList.setAdapter(adapter);
 
-        ShowcaseView showcaseView = new ShowcaseView.Builder(this)
-                .setTarget(new ViewTarget(fab))
-                .setContentTitle("Add!")
-                .setContentText("Add new text clips here - they will be automatically synchronized with Android Wear device.")
-                .hideOnTouchOutside()
-                .setStyle(R.style.CustomShowcaseTheme)
-                .singleShot(2223)
-                .build();
-        showcaseView.hideButton();
-        showcaseView.show();
+    }
+
+    private void firstRunCheck() {
+        boolean isFirstRun = sharedPreferences.getBoolean("isFirstRun", true);
+        if(isFirstRun) {
+            ShowcaseView showcaseView = new ShowcaseView.Builder(this)
+                    .setTarget(new ViewTarget(fab))
+                    .setContentTitle("Add!")
+                    .setContentText("Add new text clips here - they will be automatically synchronized with Android Wear device.")
+                    .hideOnTouchOutside()
+                    .setStyle(R.style.CustomShowcaseTheme)
+                    .singleShot(234342)
+                    .build();
+            showcaseView.hideButton();
+            showcaseView.show();
+
+            createStory("Sample note", MainActivity.this.getResources().getString(R.string.samuel_speech));
+            readStories();
+
+            sharedPreferences.edit().putBoolean("isFirstRun", false).apply();
+        }
     }
 
     public void onEvent(EventStoryChanged storyChanged) {
         if(storyChanged.eventType == EventStoryChanged.EventType.Deleted){
-
+            showDeleteConfirmationDialog(storyChanged.title);
         } else if(storyChanged.eventType == EventStoryChanged.EventType.Test){
-            RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
-                    .equalTo("title", storyChanged.title)
-                    .findAll();
-            showTestDialog(result2.first(), MainActivity.this);
+            StoryRealm storyRealm = realm.where(StoryRealm.class).equalTo("title", storyChanged.title).findFirst();
+            showTestDialog(storyRealm, MainActivity.this);
         }
     }
 
     private void deleteStory(String title){
         realm.beginTransaction();
-        RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
-                .equalTo("title", title)
-                .findAll();
-        result2.removeLast();
+        realm.where(StoryRealm.class).equalTo("title", title).findFirst().removeFromRealm();
         realm.commitTransaction();
         readStories();
     }
@@ -106,7 +114,8 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
         EventBus.getDefault().register(this);
         realm = Realm.getInstance(this);
         realm.addChangeListener(this);
-        Log.d(TAG, "onCreate isConnected: " + DetectWear.isConnected());
+
+        firstRunCheck();
         readStories();
     }
 
@@ -162,7 +171,6 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
                     public void onClick(DialogInterface dialog, int whichButton) {
                         createStory(titleBox.getText().toString(), descriptionBox.getText().toString());
                         readStories();
-
                     }
                 }).setNegativeButton("Cancel",
                 new DialogInterface.OnClickListener() {
@@ -174,12 +182,22 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
 
     private void showDeleteConfirmationDialog(final String storyTitle){
         final AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle(storyTitle + "").setMessage("Do you want to delete it?").setPositiveButton("Delete",
+        alert.setTitle("Delete").setMessage("Do you want to delete " + storyTitle +"?").setPositiveButton("Delete",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         deleteStory(storyTitle);
                     }
                 }).setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                });
+        alert.show();
+    }
+
+    private void showNoWearDevice(){
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("No Android Wear!").setMessage("No Android Wear device detected, for best experience you need smartwatch with Android Wear.").setPositiveButton("Ok, I understand",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                     }
@@ -221,16 +239,23 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
 
     @Override
     public void nodesChanged(ArrayList<Node> nodes) {
-        Log.d(TAG, "nodesChanged nodes: " + nodes);
+
     }
 
     @Override
     public void onNoConnectedNode() {
-        Log.d(TAG, "onNoConnectedNode ");
+        if(sharedPreferences == null) {
+            return;
+        }
+        boolean isFirstTimeWarningWear = sharedPreferences.getBoolean("isFirstTimeWarningWear", true);
+        if(isFirstTimeWarningWear){
+            showNoWearDevice();
+            sharedPreferences.edit().putBoolean("isFirstTimeWarningWear", false).apply();
+        }
     }
 
     @Override
     public void onNewConnectedNode(Node node) {
-        Log.d(TAG, "onNewConnectedNode node: " + node);
+
     }
 }

@@ -46,12 +46,21 @@ public class DetectWear {
                         @Override
                         public void onConnectionSuspended ( int cause){
                             Log.d(TAG, "onConnectionSuspended");
+                            if(nodesListener != null) {
+                                nodesListener.nodesChanged(nodesList);
+                                nodesListener.onNoConnectedNode();
+                            }
                         }
                     }).addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
                         @Override
                         public void onConnectionFailed(ConnectionResult result) {
                             Log.d(TAG, "onConnectionFailed ");
                             nodesList = new ArrayList<>();
+                            if(nodesListener != null) {
+                                nodesListener.nodesChanged(nodesList);
+                                nodesListener.onNoConnectedNode();
+                            }
+
                         }
                     }).addApi(Wearable.API).build();
             Wearable.NodeApi.addListener(mGoogleApiClient, new NodeApi.NodeListener() {
