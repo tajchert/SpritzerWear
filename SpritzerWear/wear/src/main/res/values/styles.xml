@@ -1,0 +1,8 @@
+<resources>
+    <style name="AppThemeNoSwipe" parent="Theme.Wearable">
+        <item name="android:windowSwipeToDismiss">false</item>
+        <item name="android:colorBackground">#000</item>
+        <item name="android:background">#000</item>
+
+    </style>
+</resources>

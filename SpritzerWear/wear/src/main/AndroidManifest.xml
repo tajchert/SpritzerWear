@@ -28,6 +28,7 @@
 
         <activity
             android:name=".SpritzerActivity"
+            android:theme="@style/AppThemeNoSwipe"
             android:label="@string/title_activity_spritzer" >
         </activity>
     </application>
