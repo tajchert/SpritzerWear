@@ -12,10 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import io.realm.RealmQuery;
-import io.realm.RealmResults;
 import pl.tajchert.spritzerwearcommon.Story;
-import pl.tajchert.spritzerwearcommon.StoryRealm;
 
 public class FragmentStorySelector extends Fragment implements WearableListView.ClickListener {
     private WearableListView.Adapter adapter;
@@ -42,13 +39,9 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         super.onResume();
         readStoriesRealm();
     }
-    private void readStoriesRealm(){
-        RealmQuery<StoryRealm> query = WearSpritzerApplication.getRealm().where(StoryRealm.class);
-        RealmResults<StoryRealm> resultAllStories = query.findAll();
-        stories = new ArrayList<>();
-        for(StoryRealm storyRealm : resultAllStories){
-            stories.add(new Story(storyRealm));
-        }
+
+    public void readStoriesRealm(){
+        stories =  WearSpritzerApplication.getAllStories();
         adapter = new Adapter(getActivity(), stories);
         listView.setAdapter(adapter);
     }
