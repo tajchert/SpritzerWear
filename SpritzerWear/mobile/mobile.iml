@@ -94,6 +94,7 @@
     <orderEntry type="library" exported="" name="realm-android-0.79.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="library-5.0.0" level="project" />
     <orderEntry type="module" module-name="spritzerLib" exported="" />
     <orderEntry type="module" module-name="detectwear" exported="" />
     <orderEntry type="module" module-name="common" exported="" />

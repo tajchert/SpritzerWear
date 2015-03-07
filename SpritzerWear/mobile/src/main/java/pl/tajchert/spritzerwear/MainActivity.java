@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
 import com.andrewgiang.textspritzer.lib.SpritzerTextView;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.google.android.gms.wearable.Node;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -48,8 +50,6 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
         DetectWear.init(this);
         DetectWear.setNodesListener(this);
 
-
-
         commentsRecList = (RecyclerView) findViewById(R.id.storyList);
         fab = (FloatingActionButton) findViewById(R.id.normal_plus);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,23 +66,38 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
         arrayListStories = new ArrayList<>();
         adapter = new AdapterComment(arrayListStories);
         commentsRecList.setAdapter(adapter);
+
+        ShowcaseView showcaseView = new ShowcaseView.Builder(this)
+                .setTarget(new ViewTarget(fab))
+                .setContentTitle("Add!")
+                .setContentText("Add new text clips here - they will be automatically synchronized with Android Wear device.")
+                .hideOnTouchOutside()
+                .setStyle(R.style.CustomShowcaseTheme)
+                .singleShot(2223)
+                .build();
+        showcaseView.hideButton();
+        showcaseView.show();
     }
 
     public void onEvent(EventStoryChanged storyChanged) {
         if(storyChanged.eventType == EventStoryChanged.EventType.Deleted){
-            realm.beginTransaction();
-            RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
-                    .equalTo("title", storyChanged.title)
-                    .findAll();
-            result2.removeLast();
-            realm.commitTransaction();
-            readStories();
+
         } else if(storyChanged.eventType == EventStoryChanged.EventType.Test){
             RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
                     .equalTo("title", storyChanged.title)
                     .findAll();
             showTestDialog(result2.first(), MainActivity.this);
         }
+    }
+
+    private void deleteStory(String title){
+        realm.beginTransaction();
+        RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
+                .equalTo("title", title)
+                .findAll();
+        result2.removeLast();
+        realm.commitTransaction();
+        readStories();
     }
 
     @Override
@@ -148,6 +163,21 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
                         createStory(titleBox.getText().toString(), descriptionBox.getText().toString());
                         readStories();
 
+                    }
+                }).setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                });
+        alert.show();
+    }
+
+    private void showDeleteConfirmationDialog(final String storyTitle){
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle(storyTitle + "").setMessage("Do you want to delete it?").setPositiveButton("Delete",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        deleteStory(storyTitle);
                     }
                 }).setNegativeButton("Cancel",
                 new DialogInterface.OnClickListener() {
