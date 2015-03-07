@@ -1,6 +1,8 @@
 package pl.tajchert.spritzerwear;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,10 +10,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 
+import com.andrewgiang.textspritzer.lib.SpritzerTextView;
 import com.google.android.gms.wearable.Node;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -23,7 +27,7 @@ import io.realm.RealmChangeListener;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import pl.tajchert.detectwear.DetectWear;
-import pl.tajchert.spritzerwear.events.DeletedStory;
+import pl.tajchert.spritzerwear.events.EventStoryChanged;
 import pl.tajchert.spritzerwearcommon.Story;
 import pl.tajchert.spritzerwearcommon.StoryRealm;
 
@@ -64,14 +68,21 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
         commentsRecList.setAdapter(adapter);
     }
 
-    public void onEvent(DeletedStory deletedStory) {
-        realm.beginTransaction();
-        RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
-                .equalTo("title", deletedStory.title)
-                .findAll();
-        result2.removeLast();
-        realm.commitTransaction();
-        readStories();
+    public void onEvent(EventStoryChanged storyChanged) {
+        if(storyChanged.eventType == EventStoryChanged.EventType.Deleted){
+            realm.beginTransaction();
+            RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
+                    .equalTo("title", storyChanged.title)
+                    .findAll();
+            result2.removeLast();
+            realm.commitTransaction();
+            readStories();
+        } else if(storyChanged.eventType == EventStoryChanged.EventType.Test){
+            RealmResults<StoryRealm> result2 = realm.where(StoryRealm.class)
+                    .equalTo("title", storyChanged.title)
+                    .findAll();
+            showTestDialog(result2.first(), MainActivity.this);
+        }
     }
 
     @Override
@@ -91,6 +102,26 @@ public class MainActivity extends ActionBarActivity implements RealmChangeListen
             realm.close();
         }
         super.onStop();
+    }
+
+    private void showTestDialog(StoryRealm story, Context context){
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.dialog_spritz);
+        dialog.setTitle(story.getTitle());
+
+        SpritzerTextView text = (SpritzerTextView) dialog.findViewById(R.id.spritzTV);
+        text.setSpritzText(story.getContent());
+        text.play();
+
+        Button dialogButton = (Button) dialog.findViewById(R.id.buttonClose);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     private void showAddDialog(){

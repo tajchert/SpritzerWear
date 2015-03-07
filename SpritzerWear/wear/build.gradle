@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "pl.tajchert.spritzerwear"
@@ -23,6 +23,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.google.android.support:wearable:1.0.0'
-    compile 'com.andrewgiang.spritzertextview:library:0.3.31'
+    compile project(':spritzerLib')
     compile project(':common')
 }

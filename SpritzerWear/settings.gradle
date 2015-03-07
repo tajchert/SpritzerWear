@@ -1,1 +1,1 @@
-include ':mobile', ':wear', ':common', ':detectwear'
+include ':mobile', ':wear', ':common', ':detectwear', ':spritzerLib'

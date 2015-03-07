@@ -37,6 +37,15 @@
             android:layout_marginRight="10dp"/>
 
         <ImageButton
+            android:id="@+id/storyTest"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_toLeftOf="@+id/storyDelete"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/test_button"
+            android:layout_marginRight="10dp" />
+
+        <ImageButton
             android:id="@+id/storyDelete"
             android:layout_width="34dp"
             android:layout_height="36dp"
