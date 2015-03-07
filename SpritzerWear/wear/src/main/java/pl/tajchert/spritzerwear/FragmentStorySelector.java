@@ -2,9 +2,9 @@ package pl.tajchert.spritzerwear;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WearableListView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import pl.tajchert.spritzerwearcommon.Story;
@@ -21,9 +20,7 @@ import pl.tajchert.spritzerwearcommon.StoryRealm;
 public class FragmentStorySelector extends Fragment implements WearableListView.ClickListener {
     private WearableListView.Adapter adapter;
     private WearableListView listView;
-    public FragmentSpritzer fragmentSpritzer;
     private ArrayList<Story> stories;
-    private Realm realm;
 
     public FragmentStorySelector() {
     }
@@ -37,7 +34,6 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         adapter = new Adapter(getActivity(), stories);
         listView.setAdapter(adapter);
         listView.setClickListener(this);
-        realm = Realm.getInstance(getActivity());
         return view;
     }
 
@@ -47,7 +43,7 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         readStoriesRealm();
     }
     private void readStoriesRealm(){
-        RealmQuery<StoryRealm> query = realm.where(StoryRealm.class);
+        RealmQuery<StoryRealm> query = WearSpritzerApplication.getRealm().where(StoryRealm.class);
         RealmResults<StoryRealm> resultAllStories = query.findAll();
         stories = new ArrayList<>();
         for(StoryRealm storyRealm : resultAllStories){
@@ -59,9 +55,9 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
 
     @Override
     public void onClick(WearableListView.ViewHolder v) {
-        if(fragmentSpritzer != null){
-            fragmentSpritzer.setStoryContent(stories.get(v.getPosition()).getContent());
-        }
+        Intent intent = new Intent(getActivity(), SpritzerActivity.class);
+        intent.putExtra("title", stories.get(v.getPosition()).getTitle());
+        startActivity(intent);
     }
 
     @Override
@@ -88,7 +84,6 @@ public class FragmentStorySelector extends Fragment implements WearableListView.
         public void onBindViewHolder(WearableListView.ViewHolder holder, int position) {
             TextView view = (TextView) holder.itemView.findViewById(R.id.name);
             view.setText(storyList.get(position).getTitle());
-            Log.d("FragmentStorySelector", "title: " +storyList.get(position).getTitle());
             holder.itemView.setTag(position);
         }
 

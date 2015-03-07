@@ -18,24 +18,21 @@ public class MainActivity extends Activity {
 
         fragments = new ArrayList<>();
         FragmentStorySelector fragmentStorySelector = new FragmentStorySelector();
-        FragmentSpritzer fragmentSpritzer = new FragmentSpritzer();
-
-        fragmentStorySelector.fragmentSpritzer = fragmentSpritzer;
-
         fragments.add(fragmentStorySelector);
-        fragments.add(fragmentSpritzer);
 
         mGridPager = (GridViewPagerOnlyHorizontal) findViewById(R.id.gridPager);
         GridPagerAdapter adapter = new GridViewPagerAdapter(this, getFragmentManager(), fragments);
         mGridPager.setAdapter(adapter);
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
-
+    @Override
+    protected void onDestroy() {
+        WearSpritzerApplication.closeRealm();
+        super.onDestroy();
+    }
 }

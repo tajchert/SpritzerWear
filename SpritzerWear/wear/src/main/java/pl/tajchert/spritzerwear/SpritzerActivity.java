@@ -1,7 +1,7 @@
 package pl.tajchert.spritzerwear;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -9,10 +9,13 @@ import android.widget.LinearLayout;
 import com.andrewgiang.textspritzer.lib.Spritzer;
 import com.andrewgiang.textspritzer.lib.SpritzerTextView;
 
+import pl.tajchert.spritzerwearcommon.StoryRealm;
 
-public class SpritzerActivity extends ActionBarActivity {
+
+public class SpritzerActivity extends Activity {
     private SpritzerTextView spritzerTV;
     private LinearLayout linearLayout;
+    private StoryRealm story;
     private boolean isPlaying;
 
     @Override
@@ -32,7 +35,11 @@ public class SpritzerActivity extends ActionBarActivity {
                 return false;
             }
         });
-        spritzerTV.setSpritzText("add the spritz text here");
+        String storyTitle = getIntent().getExtras().getString("title", "");
+        if(!storyTitle.equals("")){
+            story = WearSpritzerApplication.getStoryRealm(storyTitle);
+            spritzerTV.setSpritzText(story.getContent());
+        }
         setSpritzer();
     }
 
@@ -54,11 +61,5 @@ public class SpritzerActivity extends ActionBarActivity {
                 isPlaying = false;
             }
         });
-    }
-
-    public void setStoryContent(String content){
-        if(spritzerTV != null){
-            spritzerTV.setSpritzText(content);
-        }
     }
 }
