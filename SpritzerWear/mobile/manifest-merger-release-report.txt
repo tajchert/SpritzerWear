@@ -58,6 +58,28 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:16:17
 	android:name
 		ADDED from AndroidManifest.xml:16:27
+service#pl.tajchert.spritzerwear.events.WearListener
+ADDED from AndroidManifest.xml:20:9
+	android:enabled
+		ADDED from AndroidManifest.xml:22:13
+	android:exported
+		ADDED from AndroidManifest.xml:23:13
+	android:name
+		ADDED from AndroidManifest.xml:21:13
+intent-filter#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from AndroidManifest.xml:24:13
+action#com.google.android.gms.wearable.BIND_LISTENER
+ADDED from AndroidManifest.xml:25:17
+	android:name
+		ADDED from AndroidManifest.xml:25:25
+meta-data#com.google.android.gms.version
+ADDED from AndroidManifest.xml:29:9
+MERGED from com.google.android.gms:play-services:6.5.87:21:9
+MERGED from com.google.android.gms:play-services:6.5.87:21:9
+	android:value
+		ADDED from AndroidManifest.xml:31:13
+	android:name
+		ADDED from AndroidManifest.xml:30:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from SpritzerWear:common:unspecified:8:5
@@ -86,13 +108,6 @@ MERGED from AndroidManifest.xml:3:13
 	android:minSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
-meta-data#com.google.android.gms.version
-ADDED from com.google.android.gms:play-services:6.5.87:21:9
-MERGED from com.google.android.gms:play-services:6.5.87:21:9
-	android:value
-		ADDED from com.google.android.gms:play-services:6.5.87:23:13
-	android:name
-		ADDED from com.google.android.gms:play-services:6.5.87:22:13
 activity#android.support.v7.widget.TestActivity
 ADDED from com.android.support:recyclerview-v7:21.0.0:18:9
 MERGED from com.android.support:recyclerview-v7:21.0.0:18:9

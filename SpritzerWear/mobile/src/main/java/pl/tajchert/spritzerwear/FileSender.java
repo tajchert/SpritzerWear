@@ -14,6 +14,7 @@ import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
 import java.io.File;
+import java.util.Calendar;
 
 import io.realm.Realm;
 import pl.tajchert.spritzerwearcommon.Tools;
@@ -51,6 +52,7 @@ public class FileSender extends AsyncTask<Void, Void, Void> {
         PutDataMapRequest dataMap = PutDataMapRequest.create(Tools.WEAR_PATH);
         byte[] arr = asset.getData();
         dataMap.getDataMap().putByteArray(Tools.DATA_ASSET_FILE, arr);
+        dataMap.getDataMap().putLong("timestamp", Calendar.getInstance().getTimeInMillis());
         PutDataRequest request = dataMap.asPutDataRequest();
         PendingResult<DataApi.DataItemResult> pendingResult = Wearable.DataApi.putDataItem(mGoogleAppiClient, request);
         pendingResult.setResultCallback(new ResultCallback<DataApi.DataItemResult>() {

@@ -23,7 +23,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ShapeWear.initShapeWear(this);
         setContentView(R.layout.activity_gridviewpager);
+        new SendMessageToNode(Tools.WEAR_REFRESH_REQUEST,"", MainActivity.this).start();
 
         fragments = new ArrayList<>();
         fragmentStorySelector = new FragmentStorySelector();

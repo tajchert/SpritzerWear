@@ -15,6 +15,7 @@ public class Tools {
     public static final String WEAR_KEY = "spritzerwear_text_";
     public static final String DATA_STORY_CHANGED = "pl.tajchert.spritzerwear.storychanged";
     public static final String DATA_ASSET_FILE = "pl.tajchert.spritzerwear.asset.file";
+    public static final String WEAR_REFRESH_REQUEST = "pl.tajchert.spritzerwear.refresh.request";
 
 
     public static Asset assetFromFile(String path) {
