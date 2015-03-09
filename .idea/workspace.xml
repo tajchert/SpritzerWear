@@ -1,156 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="name" value="app: pl.tajchert.spritzerwear" />
+        <option name="packageNamePattern" value="pl.tajchert.spritzerwear" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: pl.tajchert.spritzerwear" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="53a4ebb9-a5bb-4e2d-aad5-2d39d3834bf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WearSpritzer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_21_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common/common.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DetectWear/detectwear.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/eventbus_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/floatingactionbutton_1_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/library_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/library_5_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/mobile.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_6_5_87.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/realm_android_0_79_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_21_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spritzerLib/spritzerLib.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v13_20_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wear/wear.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/wearable_1_0_0.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/DetectWear/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/DetectWear/detectwear.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/DetectWear/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/DetectWear/src/main/java/pl/tajchert/detectwear/DetectWear.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/SpritzerWear.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/common.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/src/main/java/pl/tajchert/spritzerwearcommon/Story.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/src/main/java/pl/tajchert/spritzerwearcommon/StoryRealm.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/common/src/main/java/pl/tajchert/spritzerwearcommon/Tools.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/gradle.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/gradlew" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/manifest-merger-release-report.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/mobile.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/proguard-rules.pro" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/androidTest/java/pl/tajchert/spritzerwear/ApplicationTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/AdapterComment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/FileSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/HolderStory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/SpritzerWearApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/StorySender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/events/EventStoryChanged.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/java/pl/tajchert/spritzerwear/events/WearListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_delete_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_delete_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_textsms_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-hdpi/ic_textsms_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_delete_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_delete_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_textsms_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-mdpi/ic_textsms_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_delete_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_delete_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_textsms_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xhdpi/ic_textsms_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_delete_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_delete_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_textsms_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxhdpi/ic_textsms_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_delete_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_delete_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_textsms_black.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable-xxxhdpi/ic_textsms_grey600.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable/delete_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/drawable/test_button.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/layout/card_story.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/layout/dialog_spritz.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/values-sw600dp/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/values/colors.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/values/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/mobile/src/main/res/values/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/settings.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/gradle.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/lib.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/proguard-rules.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/spritzerLib.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/instrumentTest/java/com/andrewgiang/textspritzer/lib/SpritzerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/java/com/andrewgiang/textspritzer/lib/DefaultDelayStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/java/com/andrewgiang/textspritzer/lib/DelayStrategy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/java/com/andrewgiang/textspritzer/lib/Spritzer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/java/com/andrewgiang/textspritzer/lib/SpritzerTextView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/res/values/attrs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/res/values/colors.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/spritzerLib/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/proguard-rules.pro" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/FragmentStorySelector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/GridViewPagerAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/GridViewPagerOnlyHorizontal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/ListenerService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/SendMessageToNode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/SendWearManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/ShapeWear.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/SpritzerActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/WearSpritzerApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/WearableListItemLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/java/pl/tajchert/spritzerwear/WearableListOnlyVertical.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/layout/activity_gridviewpager.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/layout/activity_spritzer.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/layout/fragment_story_selector.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/layout/list_story_item.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SpritzerWear/wear/wear.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/manifest-merger-release-report.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/mobile/src/main/res/drawable-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/mobile/src/main/res/drawable-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/mobile/src/main/res/drawable-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/mobile/src/main/res/drawable-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/res/drawable-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/mobile/src/main/res/drawable-xxxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wear/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/wear/src/main/res/drawable-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wear/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/wear/src/main/res/drawable-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wear/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/wear/src/main/res/drawable-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wear/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/wear/src/main/res/drawable-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_21_0_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/build.gradle" afterPath="$PROJECT_DIR$/mobile/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wear/build.gradle" afterPath="$PROJECT_DIR$/wear/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WearSpritzer.iws" />
@@ -171,6 +47,18 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="WearSpritzer" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/Google Drive/From Dropbox/Documents/Android/KeyTajchert" />
+    <option name="KEY_ALIAS" value="spritzerwear" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2931,7 +2819,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="9979727244000" />
+        <entry key="$PROJECT_DIR$" value="9979950376000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -3531,6 +3419,14 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/wear/build.gradle" />
+        <option value="$PROJECT_DIR$/mobile/build.gradle" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -3585,6 +3481,202 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xxhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearSpritzer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -3596,10 +3688,22 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Google Drive/From Dropbox/Documents/Android/KeyTajchert" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5556" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Android_TV_720p_API_21" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/mobile" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wear/src/main/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/wear/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/wear/src/main/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/wear/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/mobile/src/main/res/drawable-xxxhdpi" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.wear">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -3755,6 +3859,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="53a4ebb9-a5bb-4e2d-aad5-2d39d3834bf9" name="Default" comment="" />
@@ -3777,7 +3884,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32950193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3785,14 +3893,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3814,6 +3921,32 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="497">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34957626" vertical-offset="0" max-vertical-offset="615">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wear/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38135594" vertical-offset="0" max-vertical-offset="510">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
 
